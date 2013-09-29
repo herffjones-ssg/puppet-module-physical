@@ -1,5 +1,5 @@
 name    'ghoneycutt-physical'
-version '0.1.0'
+version '0.1.1'
 source 'git://github.com/ghoneycutt/puppet-module-physical.git'
 author 'ghoneycutt'
 license 'Apache License, Version 2.0'
@@ -7,4 +7,4 @@ summary 'Meta class for physical nodes'
 description 'Optionally inclues classes based on manufacturer. Meant to be included from ghoneycutt/common.'
 project_page 'https://github.com/ghoneycutt/puppet-module-physical'
 
-dependency 'puppetlabs/stdlib', '>= 3.2.x'
+dependency 'puppetlabs/stdlib', '3.2.x'
