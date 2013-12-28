@@ -1,5 +1,4 @@
 require 'spec_helper'
-
 describe 'physical' do
 
   describe 'should include hp class if enabled' do
@@ -11,7 +10,7 @@ describe 'physical' do
       { :enable_hp => true }
     end
 
-    it { should include_class('hp') }
+    it { should contain_class('hp') }
 
   end
   describe 'should not include hp class if disabled' do
@@ -23,7 +22,7 @@ describe 'physical' do
       { :enable_hp => false }
     end
 
-    it { should_not include_class('hp') }
+    it { should_not contain_class('hp') }
 
   end
 
@@ -36,7 +35,7 @@ describe 'physical' do
       { :enable_hp => "true" }
     end
 
-    it { should include_class('hp') }
+    it { should contain_class('hp') }
 
   end
 
@@ -47,7 +46,7 @@ describe 'physical' do
 
     it {
       expect {
-        should include_class('hp')
+        should contain_class('hp')
       }.to raise_error(Puppet::Error, /Manufacturer <invalid> is not supported./)
     }
   end
