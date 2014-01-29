@@ -1,6 +1,0 @@
-fixtures:
-  repositories:
-    "stdlib": "git://github.com/puppetlabs/puppetlabs-stdlib.git"
-    "hp": "git://github.com/ghoneycutt/puppet-module-hp.git"
-  symlinks:
-    "physical": "#{source_dir}"

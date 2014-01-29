@@ -1,34 +1,15 @@
-# ## Class: physical ##
+# == Class: physical
 #
-# Meant to be applied to any system that is physical.
+# Applies to all physical (non-virtualized) systems.
 #
-# ### Parameters ###
-#
-# enable_hp
-# ---------
-# Boolean to include ghoneycutt/hp
-#
-# - *Default*: false
-#
-class physical (
-  $enable_hp = false,
-) {
+class physical {
 
   case $::manufacturer {
     'hp': {
-      # validate type and convert string to boolean if necessary
-      $enable_hp_type = type($enable_hp)
-      if $enable_hp_type == 'string' {
-        $hp_enabled = str2bool($enable_hp)
-      } else {
-        $hp_enabled = $enable_hp
-      }
-      if $hp_enabled == true {
-        include hp
-      }
+      include hp
     }
     default: {
-      fail("Manufacturer <${::manufacturer}> is not supported.")
+      # noop
     }
   }
 }
